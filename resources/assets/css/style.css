@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-blue: #0d6efd;
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-grey: hsla(0, 0%, 87%, 0.867);
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: var(--font-poppins);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+ul,
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+header {
+    min-height: 60px;
+    width: 100%;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--clr-black);
+}
+
+header #navbar-toggler{
+    margin-right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--clr-blue);
+    display: none;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul li {
+    float: left;
+}
+
+header ul li a {
+    padding: 20px 20px;
+    color: var(--clr-black);
+    position: relative;
+}
+
+header ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--clr-blue);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease;
+}
+
+header ul li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+header ul .active a::before{
+    transform: scaleX(1);
+}
+
+header form {
+    display: flex;
+    margin-left: 20px;
+    width: 250px;
+}
+
+header form input {
+    padding: 10px 20px;
+    width: 100%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-family: var(--font-poppins);
+}
+
+header form button {
+    padding: 10px 20px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: none;
+    background: var(--clr-blue);
+    color: var(--clr-white);
+    cursor: pointer;
+}
+
+.nav-logo{
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.nav-logo .logo{
+    color: var(--clr-white);
+}
+
+#navbar-close{
+    position: absolute;
+    right: -20px;
+    border: 1px solid var(--clr-blue);
+    top: 4px;
+    padding: 10px 15px; 
+    color: var(--clr-black);
+    background: var(--clr-white);
+    border-radius: 50%;
+}
+
+main {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+main .wrapper {
+    display: grid;
+    padding: 0 100px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    place-items: center;
+}
+
+main .wrapper div:nth-child(1) h1 {
+    font-size: 2.2rem;
+}
+
+main .wrapper div:nth-child(1) .highlight-text {
+    color: var(--clr-blue);
+}
+
+main .wrapper div:nth-child(1) .vote-now-btn {
+    display: block;
+    color: var(--clr-black);
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: fit-content;
+    background: var(--clr-blue);
+    color: var(--clr-white);
+    border-radius: 50px;
+}
+
+main .wrapper div:nth-child(2) form {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    background: var(--clr-blue);
+    border-radius: 10px;
+}
+
+main .wrapper div:nth-child(2) form div {
+    padding: 40px;
+    color: var(--clr-white);
+}
+
+main .wrapper div:nth-child(2) form div h1{
+    border-bottom: 1px solid var(--clr-grey);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+main .wrapper div:nth-child(2) form div input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    color: var(--clr-white);
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50px;
+    outline: none;
+}
+
+main .wrapper div:nth-child(2) form div input::placeholder {
+    color: var(--clr-white);
+}
+
+main .wrapper div:nth-child(2) form div button{
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: 5px 0;
+    background: var(--clr-white);
+    font-weight: 600;
+    color: var(--clr-black);
+}
+
+main .wrapper div:nth-child(2) form div a{
+    color: var(--clr-white);
+    text-decoration: underline;
+}
+
+@media (max-width: 900px){
+    header{
+        padding: 10px 20px;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100vh;
+        background: var(--clr-blue);
+        display: none;
+    }
+
+    header nav ul li{
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    header nav ul li a{
+        color: var(--clr-white);
+    }
+
+    header nav ul .active{
+        background: var(--clr-white);
+        width: 100%;
+        border: 1px solid var(--clr-grey);
+    }
+
+    header nav ul .active a{
+        color: var(--clr-black);
+    }
+
+    main .wrapper{
+        grid-template-columns: repeat(1 , 1fr);
+        padding: 20px;
+    }
+
+    header #navbar-toggler{
+        display: initial;
+    }
+}
+
+@media (max-width: 618px){
+    header {
+        display: block;
+        width: 100%;
+    }
+
+    header .header-title{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header form{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    main .wrapper div:nth-child(2) form {
+        width: 100%;
+    }
+}
