@@ -11,6 +11,7 @@
     --clr-white: hsl(0, 0%, 100%);
     --clr-black: hsl(0, 0%, 0%);
     --clr-grey: hsla(0, 0%, 87%, 0.867);
+    --clr-overlay: rgba(0,0,0,0.2);
     --font-poppins: 'Poppins', sans-serif;
 }
 
@@ -30,9 +31,11 @@ h6 {
 }
 
 ul,
-a {
+a, button {
     text-decoration: none;
     list-style: none;
+    border: none;
+    cursor: pointer;
 }
 
 header {
@@ -43,6 +46,9 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    background: var(--clr-white);
+    position: sticky;
+    top: 0;
 }
 
 header .logo {
@@ -128,6 +134,7 @@ header form button {
 .nav-logo{
     position: relative;
     padding-bottom: 20px;
+    display: none;
 }
 
 .nav-logo .logo{
@@ -143,90 +150,10 @@ header form button {
     color: var(--clr-black);
     background: var(--clr-white);
     border-radius: 50%;
+    
 }
 
-main {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-}
 
-main .wrapper {
-    display: grid;
-    padding: 0 100px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    place-items: center;
-}
-
-main .wrapper div:nth-child(1) h1 {
-    font-size: 2.2rem;
-}
-
-main .wrapper div:nth-child(1) .highlight-text {
-    color: var(--clr-blue);
-}
-
-main .wrapper div:nth-child(1) .vote-now-btn {
-    display: block;
-    color: var(--clr-black);
-    margin-top: 20px;
-    padding: 10px 20px;
-    width: fit-content;
-    background: var(--clr-blue);
-    color: var(--clr-white);
-    border-radius: 50px;
-}
-
-main .wrapper div:nth-child(2) form {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    background: var(--clr-blue);
-    border-radius: 10px;
-}
-
-main .wrapper div:nth-child(2) form div {
-    padding: 40px;
-    color: var(--clr-white);
-}
-
-main .wrapper div:nth-child(2) form div h1{
-    border-bottom: 1px solid var(--clr-grey);
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-}
-
-main .wrapper div:nth-child(2) form div input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    color: var(--clr-white);
-    background: rgba(255, 255, 255, .5);
-    border-radius: 50px;
-    outline: none;
-}
-
-main .wrapper div:nth-child(2) form div input::placeholder {
-    color: var(--clr-white);
-}
-
-main .wrapper div:nth-child(2) form div button{
-    border: none;
-    width: 100%;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin: 5px 0;
-    background: var(--clr-white);
-    font-weight: 600;
-    color: var(--clr-black);
-}
-
-main .wrapper div:nth-child(2) form div a{
-    color: var(--clr-white);
-    text-decoration: underline;
-}
 
 @media (max-width: 900px){
     header{
@@ -262,12 +189,11 @@ main .wrapper div:nth-child(2) form div a{
         color: var(--clr-black);
     }
 
-    main .wrapper{
-        grid-template-columns: repeat(1 , 1fr);
-        padding: 20px;
+    header #navbar-toggler{
+        display: initial;
     }
 
-    header #navbar-toggler{
+    .nav-logo{
         display: initial;
     }
 }
@@ -287,9 +213,7 @@ main .wrapper div:nth-child(2) form div a{
     header form{
         width: 100%;
         margin-top: 20px;
+        margin-left: 0;
     }
-
-    main .wrapper div:nth-child(2) form {
-        width: 100%;
-    }
+    
 }

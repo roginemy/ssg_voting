@@ -1,0 +1,69 @@
+@import url('style.css');
+
+main .wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 20px 100px;
+    gap: 20px;
+}
+
+main .wrapper .candidate-card img{
+    width: 100%;
+}
+
+main .wrapper .candidate-card{
+    position: relative;
+}
+
+main .wrapper .course{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    background: var(--clr-blue);
+    color: var(--clr-white);
+    border-bottom-left-radius: 20px;
+}
+
+#candidate-modal{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-overlay);
+}
+
+#candidate-modal .modal-content{
+    width: 500px;
+    height: 100%;
+    background: var(--clr-white);
+    margin: 20px auto;
+    padding: 10px;
+}
+
+main .wrapper button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    background: var(--clr-blue);
+    color: var(--clr-white);
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+    main .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 618px) {
+    main .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+    }
+}
