@@ -6,54 +6,67 @@ function navbarOffcanvasClose(navbar) {
   navbar.style.display = "none";
 }
 
-function modalShow(data){
-  let candidates = getCandidates()
-  const div = document.createElement("div")
-  candidates = candidates[data.details]
-  data.modal.style.display = "none"
-
-  div.innerHTML = `
-    <div class="modal-content">
-      <h3>${candidates.fname} ${candidates.lname}</h3>
-    </div>
-    `
-    
-  if (data.modal.style.display == "none") {
-    data.modal.style.display = "block"
-  }else{
-    data.modal.style.display = "none"
-  }
-
-  data.modal.appendChild(div)
-  console.log(data.modal);
-}
-
 function getCandidates(){
   let candidateDetails = [
     {
-      fname: 'oking',
+      fname: 'Lawrence',
       lname: 'Marapo',
       quote: 'This is a quote just i don\'t know',
       img: "../assets/img/avatar.webp",
       course: 'COMPUTER'
     },
     {
-      fname: 'dfdfd',
-      lname: 'dfdfd',
+      fname: 'Mark Daniel',
+      lname: 'Santillan',
       quote: 'This is a quote just i don\'t know',
       img: "../assets/img/avatar.webp",
       course: 'CRIMINOLOGY'
     },
     {
-      fname: 'okifdfdfdng',
-      lname: 'dfdfdfd',
+      fname: 'Samuel',
+      lname: 'Chavez',
       quote: 'This is a quote just i don\'t know',
       img: "../assets/img/avatar.webp",
       course: 'COMMERCE'
     },
     {
-      fname: 'fghfhfh',
-      lname: 'fghfhfhf',
+      fname: 'Vince Kenneth',
+      lname: 'Jumawan',
+      quote: 'This is a quote just i don\'t know',
+      img: "../assets/img/avatar.webp",
+      course: 'EDUCATION'
+    },
+    {
+      fname: 'Earl Bryan',
+      lname: 'Espinosa',
+      quote: 'This is a quote just i don\'t know',
+      img: "../assets/img/avatar.webp",
+      course: 'EDUCATION'
+    },
+    {
+      fname: 'John Ralph',
+      lname: 'Sayson',
+      quote: 'This is a quote just i don\'t know',
+      img: "../assets/img/avatar.webp",
+      course: 'EDUCATION'
+    },
+    {
+      fname: 'Dame Ruds',
+      lname: 'Escaña',
+      quote: 'This is a quote just i don\'t know',
+      img: "../assets/img/avatar.webp",
+      course: 'EDUCATION'
+    },
+    {
+      fname: 'Jeo Marc',
+      lname: 'Fernandez',
+      quote: 'This is a quote just i don\'t know',
+      img: "../assets/img/avatar.webp",
+      course: 'EDUCATION'
+    },
+    {
+      fname: 'Brent',
+      lname: 'Carallas',
       quote: 'This is a quote just i don\'t know',
       img: "../assets/img/avatar.webp",
       course: 'EDUCATION'
@@ -63,4 +76,4 @@ function getCandidates(){
   return candidateDetails;
 }
 
-export default {navbarOffcanvasOpen , navbarOffcanvasClose, modalShow, getCandidates};
+export default {navbarOffcanvasOpen , navbarOffcanvasClose, getCandidates};

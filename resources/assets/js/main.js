@@ -34,7 +34,7 @@ for (let i = 0; i < candidateDetails.length; i++) {
   div.innerHTML = `
     <div class="candidate-card">
     <img src="${candidateDetails[i].img}" alt="candidate-1">
-    <h3>${candidateDetails[i].fname}${candidateDetails[i].lname}</h3>
+    <h3>${candidateDetails[i].fname} ${candidateDetails[i].lname}</h3>
     <p>${candidateDetails[i].quote}</p>
     <p class="course">${candidateDetails[i].course}</p>
     <button type="button" class="view-profile">View Profile</button>
@@ -42,14 +42,4 @@ for (let i = 0; i < candidateDetails.length; i++) {
 `;
 
   candidates.appendChild(div);
-}
-
-const viewProfileBtn = document.querySelectorAll(".view-profile")
-const modal = document.getElementById("candidate-modal")
-
-for (let i = 0; i < viewProfileBtn.length; i++) {
-  viewProfileBtn[i].onclick = () => {
-    const data = {details: i, modal: modal}
-    appFunctions.modalShow(data)
-  }
 }
