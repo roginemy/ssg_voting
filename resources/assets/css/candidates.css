@@ -1,21 +1,24 @@
 @import url('style.css');
 
 main .wrapper{
+    padding: 20px 100px;
+}
+
+main #candidates{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    padding: 20px 100px;
     gap: 20px;
 }
 
-main .wrapper .candidate-card img{
+main #candidates  .candidate-card img{
     width: 100%;
 }
 
-main .wrapper .candidate-card{
+main #candidates .candidate-card{
     position: relative;
 }
 
-main .wrapper .course{
+main #candidates .course{
     position: absolute;
     top: 0;
     right: 0;
@@ -25,7 +28,7 @@ main .wrapper .course{
     border-bottom-left-radius: 20px;
 }
 
-main .wrapper button{
+main #candidates button{
     padding: 10px 20px;
     margin-top: 10px;
     font-size: 1rem;
@@ -36,16 +39,23 @@ main .wrapper button{
     cursor: pointer;
 }
 
+main .wrapper .candidate-card-details{
+    display: flex;
+    background: var(--clr-grey);
+}
+
 @media (max-width: 900px) {
     main .wrapper {
-        grid-template-columns: repeat(2, 1fr);
         padding: 20px;
+    }
+    main #candidates {
+        grid-template-columns: repeat(2, 1fr);
+        
     }
 }
 
 @media (max-width: 618px) {
-    main .wrapper {
+    main #candidates {
         grid-template-columns: repeat(1, 1fr);
-        padding: 20px;
     }
 }

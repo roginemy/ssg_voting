@@ -76,4 +76,18 @@ function getCandidates(){
   return candidateDetails;
 }
 
-export default {navbarOffcanvasOpen , navbarOffcanvasClose, getCandidates};
+function viewCandidateProfile(card, candidateContainer, data){
+
+    const div = document.createElement("div")
+    
+    div.innerHTML = `
+      <div class="candidate-card-details">
+      ;dshhfjkdshkfjhsdhfkshksh
+      </div>
+    `
+    card.appendChild(div)
+
+    candidates.remove()
+}
+
+export default {navbarOffcanvasOpen , navbarOffcanvasClose, getCandidates, viewCandidateProfile};

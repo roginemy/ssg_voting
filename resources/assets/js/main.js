@@ -24,9 +24,8 @@ for (let i = 0; i < candidateProfileBtns.length; i++) {
 
 // CANDIDATES - candidates.html
 
-let candidates = document.getElementById("candidates")
-const candidateDetails = appFunctions.getCandidates()
-
+let candidates = document.getElementById("candidates");
+const candidateDetails = appFunctions.getCandidates();
 
 for (let i = 0; i < candidateDetails.length; i++) {
   const div = document.createElement("div");
@@ -42,4 +41,16 @@ for (let i = 0; i < candidateDetails.length; i++) {
 `;
 
   candidates.appendChild(div);
+}
+
+const viewCandidateBtn = document.querySelectorAll(".view-profile");
+const candidatesMain = document.querySelector("#candidates-main .wrapper")
+
+for (let i = 0; i < viewCandidateBtn.length; i++) {
+  viewCandidateBtn[i].onclick = () => {
+    
+
+    appFunctions.viewCandidateProfile(candidatesMain,candidates,candidateDetails[i])
+
+  }
 }
