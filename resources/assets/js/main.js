@@ -27,6 +27,7 @@ for (let i = 0; i < candidateProfileBtns.length; i++) {
 let candidates = document.getElementById("candidates");
 
 
+
   appFunctions.addCandidateCard(candidates)
 
   const candidateDetails = appFunctions.getCandidates();
@@ -40,6 +41,8 @@ let candidates = document.getElementById("candidates");
 
     }
   }
+
+  
 
 
 

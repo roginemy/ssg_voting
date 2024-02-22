@@ -139,14 +139,19 @@ function viewCandidateProfile(card, candidateContainer, data) {
         </div>
       </div>
     `;
+
   card.appendChild(div);
 
-  candidateContainer.remove();
+  candidateContainer.style.display = "none";
 
   let backBtn = document.getElementById("back-btn")
 
   backBtn.onclick = () => {
-    
+    candidateContainer.style.display = "grid";
+    const profileCards = document.querySelectorAll(".candidate-card-details")
+    profileCards.forEach(profileCard => {
+      profileCard.remove();      
+    });
   }
 }
 
@@ -159,6 +164,5 @@ export default {
   navbarOffcanvasClose,
   getCandidates,
   viewCandidateProfile,
-  addCandidateCard,
-  backToCandidates
+  addCandidateCard
 };
